@@ -23,18 +23,15 @@ import org.springframework.data.jpa.domain.Specification;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import api.repository.AgencyRepository;
 import api.specification.AgencySpecification;
-import api.domain.Agency;
+//import api.model.domain.Agency;
+import api.model.hibernateDomain.toms.Agency;
 import api.service.AgencyService;
 
 @RestController
 @RequestMapping(value = "/agencies", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AgencyController
 {
-    @Autowired
-    private AgencyRepository agencyRepository;
-
     @Autowired
     private AgencyService agencyService;
 
@@ -56,12 +53,9 @@ public class AgencyController
         return agencies;
     }
 
-     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-     public Agency findOne(
-         @PathVariable String id
-     )
-     {
-         Agency agency = agencyRepository.findOne(id);
-         return agency;
-     }
-} 
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Agency findOne(@PathVariable int id)
+    {
+        return agencyService.findOne(id);
+    }
+}

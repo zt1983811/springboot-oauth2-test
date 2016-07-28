@@ -10,8 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.lang.Byte;
 
-import api.domain.Agency;
-
+import api.model.hibernateDomain.toms.Agency;
 
 public class AgencySpecification
 {

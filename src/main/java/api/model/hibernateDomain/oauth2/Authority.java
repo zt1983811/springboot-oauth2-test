@@ -1,4 +1,4 @@
-package api.domain;
+package api.model.hibernateDomain.oauth2;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

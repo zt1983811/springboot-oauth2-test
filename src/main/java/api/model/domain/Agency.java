@@ -1,57 +1,34 @@
-package api.domain;
+package api.model.domain;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
+public class Agency implements Serializable
+{
 
-/**
- * The persistent class for the AGENCIES database table.
- * 
- */
-@Entity
-@Table(name="AGENCIES")
-@NamedQuery(name="Agency.findAll", query="SELECT a FROM Agency a")
-public class Agency implements Serializable {
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@Column(name="AGID")
 	private int agid;
 
-	@Column(name="ADDRESS")
 	private String address;
 
-	@Column(name="CITY")
 	private String city;
 
-	@Column(name="COUNTRY")
 	private String country;
 
-	@Column(name="EMAIL")
 	private String email;
 
-	@Column(name="GST")
 	private String gst;
 
-	@Column(name="IATA")
 	private String iata;
 
-	@Column(name="NAME")
 	private String name;
 
-	@Column(name="QST")
 	private String qst;
 
-	@Column(name="REGION")
 	private String region;
 
-	@Column(name="REP_NAME")
 	private String repName;
 
-	@Column(name="TEL")
 	private String tel;
 
-	@Column(name="ZIP")
 	private String zip;
 
 	public Agency() {

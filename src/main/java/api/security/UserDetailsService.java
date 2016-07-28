@@ -1,8 +1,8 @@
 package api.security;
 
-import api.domain.Authority;
-import api.domain.User;
-import api.repository.UserRepository;
+import api.model.hibernateDomain.oauth2.Authority;
+import api.model.hibernateDomain.oauth2.User;
+import api.repository.oauth2.hibernate.HUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class UserDetailsService implements org.springframework.security.core.use
     private final Logger log = LoggerFactory.getLogger(UserDetailsService.class);
 
     @Autowired
-    private UserRepository userRepository;
+    private HUserRepository userRepository;
 
     @Override
     @Transactional

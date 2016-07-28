@@ -6,8 +6,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.domain.Specifications;
 import org.springframework.data.domain.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
-import api.repository.AgencyRepository;
-import api.domain.Agency;
+import api.repository.toms.hibernate.HAgencyRepository;
+import api.model.hibernateDomain.toms.Agency;
+//import api.model.domain.toms.Agency;
 import api.specification.AgencySpecification;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class AgencyService extends AbstractService
 {
     @Autowired
-    private AgencyRepository agencyRepository;
+    private HAgencyRepository agencyRepository;
 
     public Page<Agency> findAll(Specification specs,  String[] sorts, int offset, int limit, String[] status)
     {
@@ -26,5 +27,8 @@ public class AgencyService extends AbstractService
         return agencies;
     }
 
+    public Agency findOne(int id)
+    {
+        return agencyRepository.findOne(id);
+    }
 }
-
