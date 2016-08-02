@@ -1,6 +1,6 @@
-package com.toms.oauth2.repository.hibernate;
+package com.toms.api.repository.hibernate;
 
-import com.toms.oauth2.model.hibernateDomain.User;
+import com.toms.api.model.hibernateDomain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

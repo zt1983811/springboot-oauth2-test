@@ -1,8 +1,8 @@
-package com.toms.oauth2.config;
+package com.toms.api.config;
 
-import com.toms.oauth2.security.Authorities;
-import com.toms.oauth2.security.CustomAuthenticationEntryPoint;
-import com.toms.oauth2.security.CustomLogoutSuccessHandler;
+import com.toms.api.security.Authorities;
+import com.toms.api.security.CustomAuthenticationEntryPoint;
+import com.toms.api.security.CustomLogoutSuccessHandler;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

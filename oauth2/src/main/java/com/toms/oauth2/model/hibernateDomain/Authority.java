@@ -1,4 +1,4 @@
-package com.toms.oauth2.model.hibernateDomain;
+package com.toms.api.model.hibernateDomain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

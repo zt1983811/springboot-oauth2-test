@@ -1,4 +1,4 @@
-package com.toms.oauth2.security;
+package com.toms.api.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

@@ -1,4 +1,4 @@
-package com.toms.oauth2.config;
+package com.toms.api.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

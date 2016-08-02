@@ -1,8 +1,8 @@
-package com.toms.oauth2.security;
+package com.toms.api.security;
 
-import com.toms.oauth2.model.hibernateDomain.Authority;
-import com.toms.oauth2.model.hibernateDomain.User;
-import com.toms.oauth2.repository.hibernate.HUserRepository;
+import com.toms.api.model.hibernateDomain.Authority;
+import com.toms.api.model.hibernateDomain.User;
+import com.toms.api.repository.hibernate.HUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

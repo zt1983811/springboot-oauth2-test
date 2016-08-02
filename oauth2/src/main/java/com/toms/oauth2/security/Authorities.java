@@ -1,4 +1,4 @@
-package com.toms.oauth2.security;
+package com.toms.api.security;
 
 public enum Authorities {
 

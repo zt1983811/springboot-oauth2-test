@@ -1,4 +1,4 @@
-package com.toms.oauth2.security;
+package com.toms.api.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
