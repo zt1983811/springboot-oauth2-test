@@ -2,12 +2,20 @@ allprojects {
     task hello << { task -> println "I'm $task.project.name" }
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+    }
+}
+
 subprojects {
     apply plugin: 'java'
     apply plugin: 'eclipse'
     apply plugin: 'idea'
     apply plugin: 'spring-boot'
-
 
     dependencies {
         testCompile("junit:junit")
@@ -28,16 +36,7 @@ subprojects {
         mavenCentral()
     }
     bootRepackage {
-        mainClass = 'com.Application'
-    }
-}
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+        mainClass = 'com.toms.api.Application'
     }
 }
 
