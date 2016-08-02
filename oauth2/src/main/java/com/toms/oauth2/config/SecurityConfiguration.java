@@ -1,4 +1,4 @@
-package com.toms.aouth2.config;
+package com.toms.oauth2.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -33,7 +33,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-
         auth
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());

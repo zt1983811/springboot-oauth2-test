@@ -45,25 +45,25 @@ public class OAuth2Configuration {
         public void configure(HttpSecurity http) throws Exception {
 
             http
-                    .exceptionHandling()
-                    .authenticationEntryPoint(customAuthenticationEntryPoint)
-                    .and()
-                    .logout()
-                    .logoutUrl("/oauth/logout")
-                    .logoutSuccessHandler(customLogoutSuccessHandler)
-                    .and()
-                    .csrf()
-                    .requireCsrfProtectionMatcher(new AntPathRequestMatcher("/oauth/authorize"))
-                    .disable()
-                    .headers()
-                    .frameOptions().disable()
+                .exceptionHandling()
+                .authenticationEntryPoint(customAuthenticationEntryPoint)
+                .and()
+                .logout()
+                .logoutUrl("/oauth/logout")
+                .logoutSuccessHandler(customLogoutSuccessHandler)
+                .and()
+                .csrf()
+                .requireCsrfProtectionMatcher(new AntPathRequestMatcher("/oauth/authorize"))
+                .disable()
+                .headers()
+                .frameOptions().disable()
 //                    .sessionManagement()
 //                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                    .and()
-                    .authorizeRequests()
-                    .antMatchers("/hello/").permitAll()
-                    .antMatchers("/**").authenticated();
-//                    .antMatchers("/inscriptions/**").authenticated();
+                .and()
+                .authorizeRequests()
+                .antMatchers("/hello/").permitAll()
+//                .antMatchers("/**").authenticated();
+                    .antMatchers("/inscriptions/**").authenticated();
 //                    .antMatchers("/secure/**").authenticated();
 
         }
@@ -97,24 +97,23 @@ public class OAuth2Configuration {
         private AuthenticationManager authenticationManager;
 
         @Override
-        public void configure(AuthorizationServerEndpointsConfigurer endpoints)
-                throws Exception {
+        public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
             endpoints
-                    .tokenStore(tokenStore())
-                    .authenticationManager(authenticationManager);
+                .tokenStore(tokenStore())
+                .authenticationManager(authenticationManager);
         }
 
         
         @Override
         public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
             clients
-                    .inMemory()
-                    .withClient(propertyResolver.getProperty(PROP_CLIENTID))
-                    .scopes("read", "write")
-                    .authorities(Authorities.ROLE_ADMIN.name(), Authorities.ROLE_USER.name())
-                    .authorizedGrantTypes("password", "refresh_token")
-                    .secret(propertyResolver.getProperty(PROP_SECRET))
-                    .accessTokenValiditySeconds(propertyResolver.getProperty(PROP_TOKEN_VALIDITY_SECONDS, Integer.class, 1800));
+                .inMemory()
+                .withClient(propertyResolver.getProperty(PROP_CLIENTID))
+                .scopes("read", "write")
+                .authorities(Authorities.ROLE_ADMIN.name(), Authorities.ROLE_USER.name())
+                .authorizedGrantTypes("password", "refresh_token")
+                .secret(propertyResolver.getProperty(PROP_SECRET))
+                .accessTokenValiditySeconds(propertyResolver.getProperty(PROP_TOKEN_VALIDITY_SECONDS, Integer.class, 1800));
         }
         
         @Override
